@@ -8,7 +8,7 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 
 // Connect to CSS
-app.use(express.static(path.join(__dirname, "../FriendFinder/app/public")));
+// app.use(express.static(path.join(__dirname, "../FriendFinder/app/public")));
 
 // Middleware
 app.use(bodyParser.json());
@@ -17,8 +17,8 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Routes
-require(path.join(__dirname, "../FriendFinder/app/routing/apiRoutes"))(app);
-require(path.join(__dirname, "../FriendFinder/app/routing/htmlRoutes"))(app);
+require(path.join(__dirname, "../Friends/app/routing/apiRoutes"))(app);
+require(path.join(__dirname, "../Friends/app/routing/htmlRoutes"))(app);
 
 app.listen(PORT, function() {
   console.log("Listening on PORT: " + PORT);
