@@ -25,7 +25,7 @@
     <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
     
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
 
 <body>
     <header>
@@ -272,9 +272,10 @@
             // Add user inputs to friends list
             $.post('/api/friends', userInput)
                 .done(function (data) {
+                    console.log({data});
                     // Set the name and image values of friend match
                     $('#userMatch').html(data.matchName);
-                    $("#userMatchImage").attr("src", data.matchImage);
+                    $("#userMatchImage").attr("src", `./assets/images/${data.matchPic}`);
                     // Pop open the modal dialog
                     $('#modals').modal('toggle');
                 });

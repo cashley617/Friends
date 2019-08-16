@@ -40,9 +40,9 @@ module.exports = function (app) {
 
         // Push user
         friends.push(userAnswer);
-
+        console.log({matchName, matchPic})
         // Send response
-        res.json({
+        res.send({
             status: "OK",
             matchName: matchName,
             matchPic: matchPic
