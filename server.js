@@ -10,6 +10,8 @@ var PORT = process.env.PORT || 8080;
 // Connect to CSS
 // app.use(express.static(path.join(__dirname, "../FriendFinder/app/public")));
 
+app.use(express.static(path.join(__dirname, "public")));
+
 // Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
